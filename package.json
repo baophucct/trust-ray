@@ -13,7 +13,9 @@
     "tslint-fix": "tslint -c tslint.json -p tsconfig.json --fix",
     "debug": "npm run build && npm run watch-debug",
     "serve-debug": "nodemon --inspect dist/Server.js",
-    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": "9.5.0",
@@ -55,7 +57,8 @@
     "typescript": "^2.7.2",
     "web3": "^1.0.0-beta.24",
     "winston": "^2.4.0",
-    "xss-filters": "^1.2.7"
+    "xss-filters": "^1.2.7",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.19",
@@ -77,5 +80,6 @@
     "@types/xss-filters": "0.0.27",
     "cross-env": "^5.2.0",
     "nodemon": "^1.18.3"
-  }
+  },
+  "snyk": true
 }
